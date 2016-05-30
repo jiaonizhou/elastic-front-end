@@ -39,10 +39,10 @@ $(document).ready(function(){
         $('.panel-body')
         .append("<a id='title' href='" + resp[i].url + "' target='_blank'>" + resp[i].title + "</a>")
         .append("<p id='url'>" + resp[i].url + "</p>")
-        .append("<p id='snippet'>" + resp[i].snippet + "</p>")
+        .append("<p id='snippet'>" + resp[i].description + "</p>")
         .append("<p id='price'>Price: $" + resp[i].price + "</p>");
       }
-      //composeCarousel(resp);      // Lifen added this line, to call a function,   part 2-1
+      composeCarousel(resp);      // Lifen added this line, to call a function,   part 2-1
     }, "json");
 
 
@@ -84,7 +84,7 @@ $(document).ready(function(){
         $('.advanced-panel-body')
         .append("<a id='title' href='" + resp[i].url + "' target='_blank'>" + resp[i].title + "</a>")
         .append("<p id='url'>" + resp[i].url + "</p>")
-        .append("<p id='snippet'>" + resp[i].snippet + "</p>")
+        .append("<p id='snippet'>" + resp[i].description + "</p>")
         .append("<p id='price'>Price: $" + resp[i].price + "</p>");
       }
     }, "json");
@@ -98,26 +98,24 @@ function composeCarousel(respArray){
   $(".list_carousel").append("<ul id='foo2' class='update'>");
 
   // part2-2
-  /*for (var i = 0; i < bookPicList.length; i++){     // for real data
+  
+  for (var i = 0; i < respArray.length; i++){     // for real data
       $("#foo2")
-      .append("<li>")
-      .append("<img src='"+ respArray[i].imgUrl + "' alt='fail' width='100' height='100' />")
-      .append("<div class='belowline'>")
-      .append("<span class='titleLeft'>"+ respArray[i].title +"</span>")
-      .append("<span class='priceRight'>" + respArray[i].price + "</span>")
-      .append("</div>")
-      .append("</li>");
-  }*/
+      .append("<li><img src='"+ respArray[i].imgUrl + "' alt='fail' width='100' height='100' /> <div class='belowline'> <span class='titleLeft'>"+ respArray[i].title +"</span> <span class='priceRight'>" + respArray[i].price + "</span></div> </li>");
+  }
+  
 
   // part1-2
-  /*var bookPicList = ["novel1.jpg", "novel2.jpg", "novel3.jpg", "novel4.jpg", "novel5.jpg", "novel6.jpg", "novel7.jpg", "novel8.jpg", "novel9.jpg", "novel10.jpg"];
+  /*
+  var bookPicList = ["novel1.jpg", "novel2.jpg", "novel3.jpg", "novel4.jpg", "novel5.jpg", "novel6.jpg", "novel7.jpg", "novel8.jpg", "novel9.jpg", "novel10.jpg"];
   for (var j = 1; j < bookPicList.length; j++){
       $("#foo2").append("<li><img src='img/"+bookPicList[j]+ "' alt='fail' width='100' height='100' /><div class='belowline'><span class='textLeft'>The help</span><span class='textRight'>$10</span></div></li>");
-  }  // end
+  }
+  */
 
   $(".list_carousel").append("</ul>");
   $(".list_carousel").append("<div class='clearfix'></div>");
-  $(".list_carousel").append("<a id='prev2' class='prev' href='#'>&nbsp;&nbsp;&nbsp;</a> <a id='next2' class='next' href='#'>&nbsp;&nbsp;&nbsp;</a>");*/
+  $(".list_carousel").append("<a id='prev2' class='prev' href='#'>&nbsp;&nbsp;&nbsp;</a> <a id='next2' class='next' href='#'>&nbsp;&nbsp;&nbsp;</a>");
 
   $('#foo2').carouFredSel({
     auto: true,

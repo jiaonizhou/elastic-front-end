@@ -12,3 +12,10 @@ h1 {
 #clusters {
 	text-align: center;
 }
+
+#url {
+	width: 800px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden
+}
