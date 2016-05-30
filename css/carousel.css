@@ -1,0 +1,110 @@
+/*html, body {
+padding: 0;
+margin: 0;
+}
+body, div, p {
+font-family: Arial, Helvetica, Verdana;
+color: #333;
+}
+body {
+background-color: #eee;
+}
+h1 {
+font-size: 60px;
+}
+a, a:link, a:active, a:visited {
+color: black;
+text-decoration: underline;
+}
+a:hover {
+color: #9E1F63;
+}*/
+/*.wrapper {
+background-color: white;
+width: 660px;
+margin: 10px auto;
+padding: 50px;
+box-shadow: 0 0 5px #999;
+}*/
+.list_carousel {
+background-color: #ccc;
+margin: 20px 0px 10px 45px;   /*(top,,,left)*/
+width: 785px;
+}
+.list_carousel ul {
+margin: 0;
+padding: 0;
+list-style: none;
+display: block;
+}
+.list_carousel li {
+color: #999;
+text-align: center;
+background-color: #eee;
+/*border: 5px solid #999;*/
+width: 100px;
+height: 120px;
+padding: 0;
+margin: 6px;
+display: block;
+float: left;
+}
+
+.list_carousel span {
+  font-size: 12px;
+  color: black;
+}
+.titleLeft {
+  float: left;
+  width: 70px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden
+}
+.priceRight {
+  float: right;
+}
+
+.list_carousel.responsive {
+width: auto;
+margin-left: 0;
+}
+.clearfix {
+float: none;
+clear: both;
+}
+
+
+.prev {
+float: left;
+margin-left: -20px;
+margin-top: -70px;
+background-image: url( gui-prev.png );
+}
+.next {
+float: right;
+margin-right: -20px;
+margin-top: -70px;
+background-image: url( gui-next.png );
+}
+a:link {
+  text-decoration: none;
+}
+
+.pager {
+float: left;
+width: 300px;
+text-align: center;
+}
+.pager a {
+margin: 0 5px;
+text-decoration: none;
+}
+.pager a.selected {
+text-decoration: underline;
+}
+.timer {
+background-color: #999;
+height: 6px;
+width: 0px;
+}

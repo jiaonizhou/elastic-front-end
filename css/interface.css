@@ -1,0 +1,14 @@
+div.center {
+  margin-left: auto;
+  margin-right: auto;
+  top: 300px;
+  width: 70%;
+}
+
+h1 {
+	text-align: center;
+}
+
+#clusters {
+	text-align: center;
+}
