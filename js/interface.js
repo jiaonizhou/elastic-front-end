@@ -98,12 +98,12 @@ function composeCarousel(respArray){
   $(".list_carousel").append("<ul id='foo2' class='update'>");
 
   // part2-2
-  
+
   for (var i = 0; i < respArray.length; i++){     // for real data
       $("#foo2")
-      .append("<li><img src='"+ respArray[i].imgUrl + "' alt='fail' width='100' height='100' /> <div class='belowline'> <span class='titleLeft'>"+ respArray[i].title +"</span> <span class='priceRight'>" + respArray[i].price + "</span></div> </li>");
+      .append("<li><a href='" + respArray[i].url + "' target='_blank'><img src='"+ respArray[i].imgUrl + "' alt='fail' width='100' height='100' /></a><div class='belowline'><span class='titleLeft'>"+ respArray[i].title +"</span><span class='priceRight'>" + respArray[i].price + "</span></div></li>");
   }
-  
+
 
   // part1-2
   /*
