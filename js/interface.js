@@ -41,7 +41,7 @@ $(document).ready(function(){
         .append("<a id='title' href='" + resp[i].url + "' target='_blank'>" + resp[i].title + "</a>")
         .append("<p id='price'>Price: $" + resp[i].price + "</p>")
         .append("<p id='url'>" + resp[i].url + "</p>")
-        .append("<p id='snippet'>" + resp[i].description + "</p>");
+        .append("<p id='snippet'>" + resp[i].snippet + "</p>");
       }
       composeCarousel(resp);      // Lifen added this line, to call a function,   part 2-1
     }, "json");
@@ -84,7 +84,7 @@ $(document).ready(function(){
         .append("<a id='title' href='" + resp[i].url + "' target='_blank'>" + resp[i].title + "</a>")
         .append("<p id='price'>Price: $" + resp[i].price + "</p>")
         .append("<p id='url'>" + resp[i].url + "</p>")
-        .append("<p id='snippet'>" + resp[i].description + "</p>");
+        .append("<p id='snippet'>" + resp[i].snippet + "</p>");
       }
     }, "json");
   });
