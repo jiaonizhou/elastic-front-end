@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Advanced Book Search Engine</title>
+    <title>Basic Book Search Engine</title>
 
-    <link href="css/advanced.css" rel="stylesheet">
+    <link href="css/interface.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -41,57 +41,23 @@
 
   <body>
     <div class="center">
-        <div class="page-header">
-          <h1>Advanced Book Search Engine</h1>
+      <div class="page-header">
+        <h1>Basic Book Search Engine</h1>
+      </div>
+      <div class="input-group">
+        <input type="text" class="form-control" id="searchBar" placeholder="Search for...">
+        <span class="input-group-btn">
+          <button class="btn btn-default" id="basicSearchButton" type="button">Basic Search</button>
+        </span>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Basic Search Results</h3>
         </div>
-        <form>
-          <div class="form-group row">
-            <label for="title-field" class="col-sm-2 form-control-label">title</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="title-field" placeholder="...">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="isbn-field" class="col-sm-2 form-control-label">ISBN</label>
-            <div class="col-sm-10">
-              <input type="number" class="form-control" id="isbn-field" placeholder="...">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="author-field" class="col-sm-2 form-control-label">author</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="author-field" placeholder="...">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="min-price-field" class="col-sm-2 form-control-label">minimun price</label>
-            <div class="col-sm-10">
-              <input type="number" class="form-control" id="min-price-field" placeholder="...">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="max-price-field" class="col-sm-2 form-control-label">maximun price</label>
-            <div class="col-sm-10">
-              <input type="number" class="form-control" id="max-price-field" placeholder="...">
-            </div>
-          </div>
-          <div class="form-group row">
-            <div class="col-sm-offset-2 col-sm-10">
-              <button class="btn btn-default" id="advancedSearchButton" type="button">Advanced Search</button>
-            </div>
-          </div>
-        </form>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">Advanced Search Results</h3>
-          </div>
-          <!--Lifen added, start-->
-          <div class = "wrapper">
-          		<div class="list_carousel"></div>
-          </div>
-          <!--end-->
-          <div class="advanced-panel-body">
-          </div>
+        <div class="basic-panel-body">
         </div>
+      </div>
     </div>
   </body>
+</html>

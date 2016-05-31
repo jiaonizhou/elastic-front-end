@@ -6,6 +6,10 @@ div.center {
   width: 70%;
 }
 
+h1 {
+	text-align: center;
+}
+
 #url {
 	width: 800px;
     text-overflow: ellipsis;

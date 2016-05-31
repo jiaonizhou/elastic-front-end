@@ -11,24 +11,53 @@ window.onload = function(){
 **/
 
 $(document).ready(function(){
+
+  // basic search
+    $("#basicSearchButton").click(function(){
+    var searchKey = $("#searchBar").val();
+    var startResult = 0;
+    var endResult = 99;
+
+    var searchUrl = "http://localhost:6064/search?";
+    var params = {
+      "query": searchKey,
+      "from": startResult,
+      "to": endResult
+    }
+
+    var searchQuery = searchUrl + $.param(params);
+    alert(searchQuery);
+
+    $.get(searchQuery, function(resp, status) {
+      $(".basic-panel-body").empty();
+      for (var i = 0; i < resp.length; i++){
+        $('.basic-panel-body')
+        .append("<a id='title' href='" + resp[i].url + "' target='_blank'>" + resp[i].title + "</a>")
+        .append("<p id='price'>Price: $" + resp[i].price + "</p>")
+        .append("<p id='url'>" + resp[i].url + "</p>")
+        .append("<p id='snippet'>" + resp[i].snippet + "</p>");
+      }
+    }, "json");
+  });
+
   $(".dropdown-menu li > a").click(function(){
-    $(".dropdown-toggle").text(this.innerHTML);
+    $("#genre").text(this.innerHTML);
   });
 
   // search
   $("#searchButton").click(function(){
     var searchKey = $("#searchBar").val();
-    //var genre = $("#genre").text();
+    var genre = $("#genre").text();
     var startResult = 0;
-    var endResult = 2;
+    var endResult = 99;
 
     var searchUrl = "http://localhost:6064/search?";
     var params = {
       "query": searchKey,
       "from": startResult,
       "to": endResult,
-      "base": 2
-      //"genre": genre
+      "base": 2,
+      "genre": genre
     }
 
     var searchQuery = searchUrl + $.param(params);
@@ -43,24 +72,22 @@ $(document).ready(function(){
         .append("<p id='url'>" + resp[i].url + "</p>")
         .append("<p id='snippet'>" + resp[i].snippet + "</p>");
       }
-      composeCarousel(resp);      // Lifen added this line, to call a function,
+      composeCarousel(resp);      // Lifen added this line, to call a function
     }, "json");
   });
 
   // advanced search
   $("#advancedSearchButton").click(function(){
-    //var genre = $('#genreAdvanced').text();
     var title = $("#title-field").val();
     var isbn = $("#isbn-field").val();
     var author = $("#author-field").val();
     var minPrice = $("#min-price-field").val();
     var maxPrice = $("#max-price-field").val();
     var startResult = 0;
-    var endResult = 9;
+    var endResult = 99;
 
     var searchUrl = "http://localhost:6064/search?";
     var params = {
-      //"genre": genre,
       "title": title,
       "isbn": isbn,
       "author": author,
@@ -83,7 +110,7 @@ $(document).ready(function(){
         .append("<p id='url'>" + resp[i].url + "</p>")
         .append("<p id='snippet'>" + resp[i].snippet + "</p>");
       }
-      composeCarousel(resp);      // Lifen added this line, to call a function,
+      composeCarousel(resp);      // Lifen added this line, to call a function
     }, "json");
   });
 });
