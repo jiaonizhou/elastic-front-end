@@ -32,12 +32,21 @@ $(document).ready(function(){
       $(".basic-panel-body").empty();
       for (var i = 0; i < resp.length; i++){
         $('.basic-panel-body')
-        .append("<a id='title' href='" + resp[i].url + "' target='_blank'>" + resp[i].title + "</a>")
+        .append("<a id='title' class='logClick' href='" + resp[i].url + "' target='_blank'>" + resp[i].title + "</a>")
         .append("<p id='price'>Price: $" + resp[i].price + "</p>")
         .append("<p id='url'>" + resp[i].url + "</p>")
         .append("<p id='snippet'>" + resp[i].snippet + "</p>");
       }
+      //Lifen added, to add click logging
+      $(".logClick").click(function () {
+          var Value = "<span style='color:blue'>Click book: " + $(this).text() + "</span></br><span style='font-size:8px'>" + $(this).attr("href") + "</span>";
+          updateLog(Value);
+      });
     }, "json");
+
+    // Lifen added, to add query logging
+    var logContent = "<span style='color:red'>Query: " + searchKey + "</span>";
+    updateLog(logContent);
   });
 
   $(".dropdown-menu li > a").click(function(){
@@ -150,7 +159,7 @@ function composeCarousel(respArray){
 
   for (var i = 0; i < respArray.length; i++){
       $("#foo2")
-      .append("<li><a href='" + respArray[i].url + "' target='_blank'><img src='"+ respArray[i].imgUrl + "' alt='fail' width='100' height='100' /></a><div class='belowline'><span class='titleLeft'>"+ respArray[i].title +"</span></br><span class='priceRight'>$" + respArray[i].price + "</span></div></li>");
+      .append("<li><a class='logClick' href='" + respArray[i].url + "' target='_blank'><img src='"+ respArray[i].imgUrl + "' alt='fail' width='100' height='100' /></a><div class='belowline'><span class='titleLeft'>"+ respArray[i].title +"</span></br><span class='priceRight'>$" + respArray[i].price + "</span></div></li>");
   }
 
   $(".list_carousel").append("</ul>");
@@ -169,6 +178,11 @@ function composeCarousel(respArray){
       onTouch: true
     }
   });
+
+  /*$(".logClick").click(function () {
+      var Value = "<span style='color:blue'>Click book: " + $(this).text() + "</span></br><span style='font-size:8px'>" + $(this).attr("href") + "</span>";
+      updateLog(Value);
+  });*/
 
 }
 
