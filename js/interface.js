@@ -136,7 +136,7 @@ function composeCarousel(respArray){
     prev: '#prev2',
     next: '#next2',
     pagination: "#pager2",
-    mousewheel: true,
+    mousewheel: false,
     swipe: {
       onMouse: true,
       onTouch: true
