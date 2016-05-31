@@ -27,6 +27,7 @@ $(document).ready(function(){
       "query": searchKey,
       "from": startResult,
       "to": endResult,
+      "base": 2
       //"genre": genre
     }
 
@@ -38,9 +39,9 @@ $(document).ready(function(){
       for (var i = 0; i < resp.length; i++){
         $('.panel-body')
         .append("<a id='title' href='" + resp[i].url + "' target='_blank'>" + resp[i].title + "</a>")
+        .append("<p id='price'>Price: $" + resp[i].price + "</p>")
         .append("<p id='url'>" + resp[i].url + "</p>")
-        .append("<p id='snippet'>" + resp[i].description + "</p>")
-        .append("<p id='price'>Price: $" + resp[i].price + "</p>");
+        .append("<p id='snippet'>" + resp[i].description + "</p>");
       }
       composeCarousel(resp);      // Lifen added this line, to call a function,   part 2-1
     }, "json");
@@ -51,7 +52,7 @@ $(document).ready(function(){
 
   // advanced search
   $("#advancedSearchButton").click(function(){
-    var genre = $('#genreAdvanced').text();
+    //var genre = $('#genreAdvanced').text();
     var title = $("#title-field").val();
     var isbn = $("#isbn-field").val();
     var author = $("#author-field").val();
@@ -62,7 +63,7 @@ $(document).ready(function(){
 
     var searchUrl = "http://localhost:6064/search?";
     var params = {
-      "genre": genre,
+      //"genre": genre,
       "title": title,
       "isbn": isbn,
       "author": author,
@@ -76,16 +77,14 @@ $(document).ready(function(){
     var advancedSearchQuery = searchUrl + $.param(params);
     alert(advancedSearchQuery);
 
-    console.log("request" + advancedSearchQuery);
-
     $.get(advancedSearchQuery, function(resp, status) {
       $(".advanced-panel-body").empty();
       for (var i = 0; i < resp.length; i++){
         $('.advanced-panel-body')
         .append("<a id='title' href='" + resp[i].url + "' target='_blank'>" + resp[i].title + "</a>")
+        .append("<p id='price'>Price: $" + resp[i].price + "</p>")
         .append("<p id='url'>" + resp[i].url + "</p>")
-        .append("<p id='snippet'>" + resp[i].description + "</p>")
-        .append("<p id='price'>Price: $" + resp[i].price + "</p>");
+        .append("<p id='snippet'>" + resp[i].description + "</p>");
       }
     }, "json");
   });

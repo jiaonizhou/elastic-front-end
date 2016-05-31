@@ -19,3 +19,12 @@ h1 {
     white-space: nowrap;
     overflow: hidden
 }
+
+#title {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+#price {
+  color: red;
+}
