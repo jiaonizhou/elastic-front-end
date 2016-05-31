@@ -28,8 +28,9 @@ box-shadow: 0 0 5px #999;
 }*/
 .list_carousel {
 background-color: #ccc;
-margin: 20px 0px 10px 45px;   /*(top,,,left)*/
+margin: 20px 0px 50px 45px;   /*(top,right,bottom,left)*/
 width: 785px;
+/*border: 5px solid #999;*/
 }
 .list_carousel ul {
 margin: 0;
@@ -43,7 +44,7 @@ text-align: center;
 background-color: #eee;
 /*border: 5px solid #999;*/
 width: 100px;
-height: 120px;
+height: 140px;
 padding: 0;
 margin: 6px;
 display: block;
@@ -56,7 +57,7 @@ float: left;
 }
 .titleLeft {
   float: left;
-  width: 70px;
+  width: 100px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden
@@ -93,7 +94,7 @@ a:link {
 
 .pager {
 float: left;
-width: 300px;
+width: 780px;
 text-align: center;
 }
 .pager a {

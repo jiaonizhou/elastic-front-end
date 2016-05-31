@@ -101,7 +101,7 @@ function composeCarousel(respArray){
 
   for (var i = 0; i < respArray.length; i++){     // for real data
       $("#foo2")
-      .append("<li><a href='" + respArray[i].url + "' target='_blank'><img src='"+ respArray[i].imgUrl + "' alt='fail' width='100' height='100' /></a><div class='belowline'><span class='titleLeft'>"+ respArray[i].title +"</span><span class='priceRight'>" + respArray[i].price + "</span></div></li>");
+      .append("<li><a href='" + respArray[i].url + "' target='_blank'><img src='"+ respArray[i].imgUrl + "' alt='fail' width='100' height='100' /></a><div class='belowline'><span class='titleLeft'>"+ respArray[i].title +"</span></br><span class='priceRight'>$" + respArray[i].price + "</span></div></li>");
   }
 
 
@@ -116,9 +116,10 @@ function composeCarousel(respArray){
   $(".list_carousel").append("</ul>");
   $(".list_carousel").append("<div class='clearfix'></div>");
   $(".list_carousel").append("<a id='prev2' class='prev' href='#'>&nbsp;&nbsp;&nbsp;</a> <a id='next2' class='next' href='#'>&nbsp;&nbsp;&nbsp;</a>");
+  $(".list_carousel").append("<div id='pager2' class='pager'></div>")    // show the page numbers
 
   $('#foo2').carouFredSel({
-    auto: true,
+    auto: false,
     prev: '#prev2',
     next: '#next2',
     pagination: "#pager2",
