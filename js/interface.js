@@ -117,13 +117,21 @@ $(document).ready(function(){
       $(".advanced-panel-body").empty();
       for (var i = 0; i < resp.length; i++){
         $('.advanced-panel-body')
-        .append("<a id='title' href='" + resp[i].url + "' target='_blank'>" + resp[i].title + "</a>")
+        .append("<a id='title' class='logClick' href='" + resp[i].url + "' target='_blank'>" + resp[i].title + "</a>")
         .append("<p id='price'>Price: $" + resp[i].price + "</p>")
         .append("<p id='url'>" + resp[i].url + "</p>")
         .append("<p id='snippet'>" + resp[i].snippet + "</p>");
       }
+      //Lifen added, to add click logging
+      $(".logClick").click(function () {
+          var Value = "<span style='color:blue'>Click book: " + $(this).text() + "</span></br><span style='font-size:8px'>" + $(this).attr("href") + "</span>";
+          updateLog(Value);
+      });
       composeCarousel(resp);      // Lifen added this line, to call a function
     }, "json");
+    // Lifen added, to add query logging
+    var logContent = "<span style='color:red'>Query: " + "title= " + title + ", isbn=" + isbn +", author= "+author + "</span>";
+    updateLog(logContent);
   });
 
 
