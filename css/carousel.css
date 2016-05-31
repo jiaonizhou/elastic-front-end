@@ -81,3 +81,15 @@ background-color: #999;
 height: 6px;
 width: 0px;
 }*/
+
+#logging {
+	/*text-align: center;*/
+  /*border: 1px solid #999;*/
+  margin-left: 167px;
+  margin-right: 167px;
+  margin-bottom: 50px;
+}
+
+#loggingArea{
+  display: none;
+}

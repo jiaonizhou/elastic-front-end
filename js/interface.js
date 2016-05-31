@@ -127,6 +127,11 @@ $(document).ready(function(){
   });
 
 
+  //Lifen added, togging logging part
+  $(".log").click(function(){
+     $("#loggingArea").slideToggle("slow");
+  });
+
 });
 
 
