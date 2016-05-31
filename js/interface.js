@@ -43,11 +43,8 @@ $(document).ready(function(){
         .append("<p id='url'>" + resp[i].url + "</p>")
         .append("<p id='snippet'>" + resp[i].snippet + "</p>");
       }
-      composeCarousel(resp);      // Lifen added this line, to call a function,   part 2-1
+      composeCarousel(resp);      // Lifen added this line, to call a function,
     }, "json");
-
-
-    //composeCarousel(null);    // just for tem test,  part 1-1
   });
 
   // advanced search
@@ -86,6 +83,7 @@ $(document).ready(function(){
         .append("<p id='url'>" + resp[i].url + "</p>")
         .append("<p id='snippet'>" + resp[i].snippet + "</p>");
       }
+      composeCarousel(resp);      // Lifen added this line, to call a function,
     }, "json");
   });
 });
@@ -96,21 +94,10 @@ function composeCarousel(respArray){
   $(".list_carousel").empty();
   $(".list_carousel").append("<ul id='foo2' class='update'>");
 
-  // part2-2
-
-  for (var i = 0; i < respArray.length; i++){     // for real data
+  for (var i = 0; i < respArray.length; i++){
       $("#foo2")
       .append("<li><a href='" + respArray[i].url + "' target='_blank'><img src='"+ respArray[i].imgUrl + "' alt='fail' width='100' height='100' /></a><div class='belowline'><span class='titleLeft'>"+ respArray[i].title +"</span></br><span class='priceRight'>$" + respArray[i].price + "</span></div></li>");
   }
-
-
-  // part1-2
-  /*
-  var bookPicList = ["novel1.jpg", "novel2.jpg", "novel3.jpg", "novel4.jpg", "novel5.jpg", "novel6.jpg", "novel7.jpg", "novel8.jpg", "novel9.jpg", "novel10.jpg"];
-  for (var j = 1; j < bookPicList.length; j++){
-      $("#foo2").append("<li><img src='img/"+bookPicList[j]+ "' alt='fail' width='100' height='100' /><div class='belowline'><span class='textLeft'>The help</span><span class='textRight'>$10</span></div></li>");
-  }
-  */
 
   $(".list_carousel").append("</ul>");
   $(".list_carousel").append("<div class='clearfix'></div>");
