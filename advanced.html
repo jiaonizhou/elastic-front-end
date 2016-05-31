@@ -30,23 +30,6 @@
     <div class="center">
         <form>
           <div class="form-group row">
-            <label for="genre-field" class="col-sm-2 form-control-label">genre</label>
-            <div class="col-sm-10">
-              <div class="input-group-btn">
-                <button type="button" id="genreAdvanced" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Art and Photography</a></li>
-                  <li><a href="#">Biographies and Memoirs</a></li>
-                  <li><a href="#">Business and Money</a></li>
-                  <li><a href="#">Calendars</a></li>
-                  <li><a href="#">Children's Books</a></li>
-                  <li><a href="#">Christian Books and Bibles</a></li>
-                  <li><a href="#">Comics and Graphic Novels</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="form-group row">
             <label for="title-field" class="col-sm-2 form-control-label">title</label>
             <div class="col-sm-10">
               <input type="text" class="form-control" id="title-field" placeholder="...">
@@ -78,13 +61,13 @@
           </div>
           <div class="form-group row">
             <div class="col-sm-offset-2 col-sm-10">
-              <input id="advancedSearchButton" type="submit" class="btn btn-secondary" value="Advanced Search">
+              <button class="btn btn-default" id="advancedSearchButton" type="button">Advanced Search</button>
             </div>
           </div>
         </form>
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title">Search Results</h3>
+            <h3 class="panel-title">Advanced Search Results</h3>
           </div>
           <div class="advanced-panel-body">
           </div>

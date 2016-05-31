@@ -5,3 +5,19 @@ div.center {
   top: 100px;
   width: 70%;
 }
+
+#url {
+	width: 800px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden
+}
+
+#title {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+#price {
+  color: red;
+}
