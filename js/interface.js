@@ -26,7 +26,7 @@ $(document).ready(function(){
     }
 
     var searchQuery = searchUrl + $.param(params);
-    alert(searchQuery);
+    //alert(searchQuery);
 
     $.get(searchQuery, function(resp, status) {
       $(".basic-panel-body").empty();
@@ -70,7 +70,7 @@ $(document).ready(function(){
     }
 
     var searchQuery = searchUrl + $.param(params);
-    alert(searchQuery);
+    //alert(searchQuery);
 
     $.get(searchQuery, function(resp, status) {
       $(".panel-body").empty();
@@ -120,7 +120,7 @@ $(document).ready(function(){
     }
 
     var advancedSearchQuery = searchUrl + $.param(params);
-    alert(advancedSearchQuery);
+    //alert(advancedSearchQuery);
 
     $.get(advancedSearchQuery, function(resp, status) {
       $(".advanced-panel-body").empty();
