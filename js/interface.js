@@ -159,7 +159,7 @@ function composeCarousel(respArray){
 
   for (var i = 0; i < respArray.length; i++){
       $("#foo2")
-      .append("<li><a class='logClick' href='" + respArray[i].url + "' target='_blank'><img src='"+ respArray[i].imgUrl + "' alt='fail' width='100' height='100' /></a><div class='belowline'><span class='titleLeft'>"+ respArray[i].title +"</span></br><span class='priceRight'>$" + respArray[i].price + "</span></div></li>");
+      .append("<li><a class='logClick2' href='" + respArray[i].url + "' target='_blank'><img src='"+ respArray[i].imgUrl + "' alt='fail' width='100' height='100' /></a><div class='belowline'><span class='titleLeft'>"+ respArray[i].title +"</span></br><span class='priceRight'>$" + respArray[i].price + "</span></div></li>");
   }
 
   $(".list_carousel").append("</ul>");
@@ -179,10 +179,10 @@ function composeCarousel(respArray){
     }
   });
 
-  /*$(".logClick").click(function () {
-      var Value = "<span style='color:blue'>Click book: " + $(this).text() + "</span></br><span style='font-size:8px'>" + $(this).attr("href") + "</span>";
+  $(".logClick2").click(function () {
+      var Value = "<span style='color:green'>Click book: " + $(this).next().children(".titleLeft").html() + "</span></br><span style='font-size:8px'>" + $(this).attr("href") + "</span>";
       updateLog(Value);
-  });*/
+  });
 
 }
 
